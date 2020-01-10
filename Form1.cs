@@ -96,7 +96,6 @@ namespace BMI_Csharp
             
         }
 
-
         private void mtxtB_gewicht_TextChanged(object sender, EventArgs e)
         {
             lbl_test3.Text = mtxtB_gewicht.Text;
@@ -105,8 +104,8 @@ namespace BMI_Csharp
 
         private void btn_bmi_Click(object sender, EventArgs e)
         {
-            summe = gewicht / ((gross / 100) * (gross / 100)); 
-            
+            summe = gewicht / ((gross / 100) * (gross / 100));
+            summe = Math.Round(summe, 2);
             lbl_summe.Text = summe.ToString();
         }
 
