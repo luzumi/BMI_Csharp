@@ -104,7 +104,7 @@ namespace BMI_Csharp
 
         private void btn_bmi_Click(object sender, EventArgs e)
         {
-            summe = gewicht / ((gross / 100) + (gross / 100));
+            summe = gewicht / ((gross / 100) + (gross / 100)); //////Summe übernimmt nur den wet von Gewicht, Division durch 0??
             lbl_summe.Text = summe.ToString();
         }
 
