@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Windows.Forms;
 
+
 namespace BMI_Csharp
 {
     public partial class Form1 : Form
     {
-        int alter = 0, gross = 0, gewicht;
-        int summe;
+        double alter = 0.5, gross = 0.5, gewicht = 0.5;
+        double summe;
 
         
 
@@ -81,13 +82,13 @@ namespace BMI_Csharp
         private void mtxtB_alter_TextChanged(object sender, EventArgs e)
         {
             lbl_test.Text = mtxtB_alter.Text;
-            alter = Int32.Parse(mtxtB_alter.Text);
+            alter = double.Parse(mtxtB_alter.Text);
         }
 
         private void mtxtB_gross_TextChanged(object sender, EventArgs e)
         {
             lbl_test2.Text = mtxtB_gross.Text;
-            gross = Int32.Parse(mtxtB_gross.Text);
+            gross = double.Parse(mtxtB_gross.Text);
         }
 
         private void lbl_summe_Click(object sender, EventArgs e)
@@ -99,12 +100,13 @@ namespace BMI_Csharp
         private void mtxtB_gewicht_TextChanged(object sender, EventArgs e)
         {
             lbl_test3.Text = mtxtB_gewicht.Text;
-            gewicht = Int32.Parse(mtxtB_gewicht.Text);
+            gewicht = double.Parse(mtxtB_gewicht.Text);
         }
 
         private void btn_bmi_Click(object sender, EventArgs e)
         {
-            summe = gewicht / ((gross / 100) + (gross / 100)); //////Summe übernimmt nur den wet von Gewicht, Division durch 0??
+            summe = gewicht / ((gross / 100) * (gross / 100)); 
+            
             lbl_summe.Text = summe.ToString();
         }
 
