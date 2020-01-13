@@ -44,7 +44,10 @@
             this.lbl_test3 = new System.Windows.Forms.Label();
             this.btn_close = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.lbl_summe = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbl_gruppe = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +56,7 @@
             this.rB_mann.AllowDrop = true;
             this.rB_mann.AutoSize = true;
             this.rB_mann.Location = new System.Drawing.Point(21, 19);
-            this.rB_mann.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rB_mann.Margin = new System.Windows.Forms.Padding(2);
             this.rB_mann.Name = "rB_mann";
             this.rB_mann.Size = new System.Drawing.Size(97, 24);
             this.rB_mann.TabIndex = 0;
@@ -66,7 +69,7 @@
             this.rB_frau.AllowDrop = true;
             this.rB_frau.AutoSize = true;
             this.rB_frau.Location = new System.Drawing.Point(130, 19);
-            this.rB_frau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rB_frau.Margin = new System.Windows.Forms.Padding(2);
             this.rB_frau.Name = "rB_frau";
             this.rB_frau.Size = new System.Drawing.Size(93, 24);
             this.rB_frau.TabIndex = 1;
@@ -108,7 +111,7 @@
             // mtxtB_alter
             // 
             this.mtxtB_alter.Location = new System.Drawing.Point(130, 60);
-            this.mtxtB_alter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtxtB_alter.Margin = new System.Windows.Forms.Padding(2);
             this.mtxtB_alter.Mask = "000";
             this.mtxtB_alter.Name = "mtxtB_alter";
             this.mtxtB_alter.Size = new System.Drawing.Size(33, 26);
@@ -122,7 +125,7 @@
             // mtxtB_gewicht
             // 
             this.mtxtB_gewicht.Location = new System.Drawing.Point(130, 135);
-            this.mtxtB_gewicht.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtxtB_gewicht.Margin = new System.Windows.Forms.Padding(2);
             this.mtxtB_gewicht.Mask = "000";
             this.mtxtB_gewicht.Name = "mtxtB_gewicht";
             this.mtxtB_gewicht.Size = new System.Drawing.Size(33, 26);
@@ -134,7 +137,7 @@
             // mtxtB_gross
             // 
             this.mtxtB_gross.Location = new System.Drawing.Point(130, 99);
-            this.mtxtB_gross.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtxtB_gross.Margin = new System.Windows.Forms.Padding(2);
             this.mtxtB_gross.Mask = "000";
             this.mtxtB_gross.Name = "mtxtB_gross";
             this.mtxtB_gross.Size = new System.Drawing.Size(33, 26);
@@ -149,7 +152,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(21, 288);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(380, 261);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -164,7 +167,7 @@
             this.btn_bmi.ForeColor = System.Drawing.Color.NavajoWhite;
             this.btn_bmi.Image = ((System.Drawing.Image)(resources.GetObject("btn_bmi.Image")));
             this.btn_bmi.Location = new System.Drawing.Point(174, 59);
-            this.btn_bmi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_bmi.Margin = new System.Windows.Forms.Padding(2);
             this.btn_bmi.Name = "btn_bmi";
             this.btn_bmi.Size = new System.Drawing.Size(46, 100);
             this.btn_bmi.TabIndex = 12;
@@ -207,7 +210,7 @@
             this.btn_close.BackColor = System.Drawing.Color.Red;
             this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_close.Location = new System.Drawing.Point(363, 24);
-            this.btn_close.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_close.Margin = new System.Windows.Forms.Padding(2);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(43, 27);
             this.btn_close.TabIndex = 16;
@@ -226,17 +229,53 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "close";
             // 
-            // lbl_summe
+            // label5
             // 
-            this.lbl_summe.AutoSize = true;
-            this.lbl_summe.ForeColor = System.Drawing.Color.Red;
-            this.lbl_summe.Location = new System.Drawing.Point(171, 170);
-            this.lbl_summe.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_summe.Name = "lbl_summe";
-            this.lbl_summe.Size = new System.Drawing.Size(64, 20);
-            this.lbl_summe.TabIndex = 18;
-            this.lbl_summe.Text = "Summe";
-            this.lbl_summe.Click += new System.EventHandler(this.lbl_summe_Click);
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(17, 190);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(177, 20);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Der errechnete BMI ist: ";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(189, 190);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(153, 20);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Ihre Eingruppierung:";
+            this.label6.Visible = false;
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(18, 210);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(240, 30);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Ihr Eingruppierung ist";
+            // 
+            // lbl_gruppe
+            // 
+            this.lbl_gruppe.AutoSize = true;
+            this.lbl_gruppe.ForeColor = System.Drawing.Color.Red;
+            this.lbl_gruppe.Location = new System.Drawing.Point(189, 210);
+            this.lbl_gruppe.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_gruppe.Name = "lbl_gruppe";
+            this.lbl_gruppe.Size = new System.Drawing.Size(153, 20);
+            this.lbl_gruppe.TabIndex = 22;
+            this.lbl_gruppe.Text = "Ihre Eingruppierung:";
+            this.lbl_gruppe.Visible = false;
             // 
             // Form1
             // 
@@ -245,7 +284,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(424, 556);
-            this.Controls.Add(this.lbl_summe);
+            this.Controls.Add(this.lbl_gruppe);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.lbl_test3);
@@ -261,7 +303,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rB_frau);
             this.Controls.Add(this.rB_mann);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Berechne Deinen BMI";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -287,7 +329,10 @@
         private System.Windows.Forms.Label lbl_test3;
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lbl_summe;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl_gruppe;
     }
 }
 
