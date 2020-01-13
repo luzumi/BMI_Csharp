@@ -52,10 +52,46 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFrau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFrau.Designer.cs">
+      <DependentUpon>FormFrau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMadel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMadel.Designer.cs">
+      <DependentUpon>FormMadel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMann.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMann.Designer.cs">
+      <DependentUpon>FormMann.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFrau.resx">
+      <DependentUpon>FormFrau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMadel.resx">
+      <DependentUpon>FormMadel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMann.resx">
+      <DependentUpon>FormMann.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
