@@ -395,7 +395,7 @@ namespace BMI_Csharp
                         }
                     }      //Kind Junge
                 else if (alter > 18 && alter < 25 && mann == true)
-                { //Ausgabe BMI_Mann.jpg in neue Form }
+                { 
                     if (summe < 19)
                     {
                         lbl_gruppe.Text = "Untergewicht";
@@ -406,15 +406,15 @@ namespace BMI_Csharp
                     }
                     else if (summe > 24 && summe <= 28)
                     {
-                        lbl_gruppe.Text = "Übergewicht";
+                        lbl_gruppe.Text = "leichtes Übergewicht";
                     }
                     else if (summe > 28)
                     {
-                        lbl_gruppe.Text = "starkes Übergewicht";
+                        lbl_gruppe.Text = "Übergewicht";
                     }
                 }
                 else if (alter >= 25 && alter < 35 && mann == true)
-                { //Ausgabe BMI_Mann.jpg in neue Form }
+                { 
                     if (summe < 19)
                     {
                         lbl_gruppe.Text = "Untergewicht";
@@ -425,15 +425,15 @@ namespace BMI_Csharp
                     }
                     else if (summe > 25 && summe <= 29)
                     {
-                        lbl_gruppe.Text = "Übergewicht";
+                        lbl_gruppe.Text = "leichtes Übergewicht";
                     }
                     else if (summe > 29)
                     {
-                        lbl_gruppe.Text = "starkes Übergewicht";
+                        lbl_gruppe.Text = "Übergewicht";
                     }
                 }
                 else if (alter >= 35 && alter < 44 && mann == true)
-                { //Ausgabe BMI_Mann.jpg in neue Form }
+                { 
                     if (summe < 20)
                     {
                         lbl_gruppe.Text = "Untergewicht";
@@ -444,15 +444,15 @@ namespace BMI_Csharp
                     }
                     else if (summe > 26 && summe <= 30)
                     {
-                        lbl_gruppe.Text = "Übergewicht";
+                        lbl_gruppe.Text = "leichtes Übergewicht";
                     }
                     else if (summe > 30)
                     {
-                        lbl_gruppe.Text = "starkes Übergewicht";
+                        lbl_gruppe.Text = "Übergewicht";
                     }
                 }
                 else if (alter >= 44 && alter < 55 && mann == true)
-                { //Ausgabe BMI_Mann.jpg in neue Form }
+                {
                     if (summe < 21)
                     {
                         lbl_gruppe.Text = "Untergewicht";
@@ -463,15 +463,15 @@ namespace BMI_Csharp
                     }
                     else if (summe > 27 && summe <= 31)
                     {
-                        lbl_gruppe.Text = "Übergewicht";
+                        lbl_gruppe.Text = "leichtes Übergewicht";
                     }
                     else if (summe > 31)
                     {
-                        lbl_gruppe.Text = "starkes Übergewicht";
+                        lbl_gruppe.Text = "Übergewicht";
                     }
                 }
                 else if (alter >= 55 && alter < 65 && mann == true)
-                { //Ausgabe BMI_Mann.jpg in neue Form }
+                {
                     if (summe < 22)
                     {
                         lbl_gruppe.Text = "Untergewicht";
@@ -482,15 +482,15 @@ namespace BMI_Csharp
                     }
                     else if (summe > 28 && summe <= 32)
                     {
-                        lbl_gruppe.Text = "Übergewicht";
+                        lbl_gruppe.Text = "leichtes Übergewicht";
                     }
                     else if (summe > 32)
                     {
-                        lbl_gruppe.Text = "starkes Übergewicht";
+                        lbl_gruppe.Text = "Übergewicht";
                     }
                 }
                 else if (alter >= 65 && mann == true)
-                { //Ausgabe BMI_Mann.jpg in neue Form }
+                { 
                     if (summe < 23)
                     {
                         lbl_gruppe.Text = "Untergewicht";
@@ -501,11 +501,11 @@ namespace BMI_Csharp
                     }
                     else if (summe > 29 && summe <= 32)
                     {
-                        lbl_gruppe.Text = "Übergewicht";
+                        lbl_gruppe.Text = "leichtes Übergewicht";
                     }
                     else if (summe > 32)
                     {
-                        lbl_gruppe.Text = "starkes Übergewicht";
+                        lbl_gruppe.Text = "Übergewicht";
                     }
                 }
                 
@@ -787,11 +787,11 @@ namespace BMI_Csharp
                     }
                     else if (summe > 25 && summe <= 29)
                     {
-                        lbl_gruppe.Text = "Übergewicht";
+                        lbl_gruppe.Text = "leichtes Übergewicht";
                     }
                     else if (summe > 29)
                     {
-                        lbl_gruppe.Text = "starkes Übergewicht";
+                        lbl_gruppe.Text = "Übergewicht";
                     }
                 }
                 else if (alter >= 25 && alter < 35 && frau == true)
@@ -806,11 +806,11 @@ namespace BMI_Csharp
                     }
                     else if (summe > 26 && summe <= 30)
                     {
-                        lbl_gruppe.Text = "Übergewicht";
+                        lbl_gruppe.Text = "leichtes Übergewicht";
                     }
                     else if (summe > 30)
                     {
-                        lbl_gruppe.Text = "starkes Übergewicht";
+                        lbl_gruppe.Text = "Übergewicht";
                     }
                 }
                 else if (alter >= 35 && alter < 44 && frau == true)
@@ -825,11 +825,11 @@ namespace BMI_Csharp
                     }
                     else if (summe > 27 && summe <= 31)
                     {
-                        lbl_gruppe.Text = "Übergewicht";
+                        lbl_gruppe.Text = "leichtes Übergewicht";
                     }
                     else if (summe > 31)
                     {
-                        lbl_gruppe.Text = "starkes Übergewicht";
+                        lbl_gruppe.Text = "Übergewicht";
                     }
                 }
                 else if (alter >= 44 && alter < 55 && frau == true)
@@ -844,11 +844,11 @@ namespace BMI_Csharp
                     }
                     else if (summe > 28 && summe <= 32)
                     {
-                        lbl_gruppe.Text = "Übergewicht";
+                        lbl_gruppe.Text = "leichtes Übergewicht";
                     }
                     else if (summe > 32)
                     {
-                        lbl_gruppe.Text = "starkes Übergewicht";
+                        lbl_gruppe.Text = "Übergewicht";
                     }
                 }
                 if (alter >= 55 && alter < 65 && frau == true)
@@ -863,11 +863,11 @@ namespace BMI_Csharp
                     }
                     else if (summe > 29 && summe <= 33)
                     {
-                        lbl_gruppe.Text = "Übergewicht";
+                        lbl_gruppe.Text = "leichtes Übergewicht";
                     }
                     else if (summe > 33)
                     {
-                        lbl_gruppe.Text = "starkes Übergewicht";
+                        lbl_gruppe.Text = "Übergewicht";
                     }
                 }
                 if (alter >= 65 && frau == true)
@@ -882,11 +882,11 @@ namespace BMI_Csharp
                     }
                     else if (summe > 30 && summe <= 34)
                     {
-                        lbl_gruppe.Text = "Übergewicht";
+                        lbl_gruppe.Text = "leichtes Übergewicht";
                     }
                     else if (summe > 34)
                     {
-                        lbl_gruppe.Text = "starkes Übergewicht";
+                        lbl_gruppe.Text = "Übergewicht";
                     }
                 }
             }
