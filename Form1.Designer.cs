@@ -52,9 +52,10 @@
             // 
             this.rB_mann.AllowDrop = true;
             this.rB_mann.AutoSize = true;
-            this.rB_mann.Location = new System.Drawing.Point(38, 30);
+            this.rB_mann.Location = new System.Drawing.Point(21, 19);
+            this.rB_mann.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rB_mann.Name = "rB_mann";
-            this.rB_mann.Size = new System.Drawing.Size(167, 36);
+            this.rB_mann.Size = new System.Drawing.Size(97, 24);
             this.rB_mann.TabIndex = 0;
             this.rB_mann.Text = "Männlich";
             this.rB_mann.UseVisualStyleBackColor = true;
@@ -64,9 +65,10 @@
             // 
             this.rB_frau.AllowDrop = true;
             this.rB_frau.AutoSize = true;
-            this.rB_frau.Location = new System.Drawing.Point(231, 30);
+            this.rB_frau.Location = new System.Drawing.Point(130, 19);
+            this.rB_frau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rB_frau.Name = "rB_frau";
-            this.rB_frau.Size = new System.Drawing.Size(161, 36);
+            this.rB_frau.Size = new System.Drawing.Size(93, 24);
             this.rB_frau.TabIndex = 1;
             this.rB_frau.Text = "Weiblich";
             this.rB_frau.UseVisualStyleBackColor = true;
@@ -75,18 +77,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 96);
+            this.label1.Location = new System.Drawing.Point(18, 62);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 32);
+            this.label1.Size = new System.Drawing.Size(50, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Alter: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 156);
+            this.label2.Location = new System.Drawing.Point(18, 101);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 32);
+            this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Größe:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -94,18 +98,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 212);
+            this.label3.Location = new System.Drawing.Point(18, 137);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 32);
+            this.label3.Size = new System.Drawing.Size(75, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Gewicht: ";
             // 
             // mtxtB_alter
             // 
-            this.mtxtB_alter.Location = new System.Drawing.Point(231, 93);
+            this.mtxtB_alter.Location = new System.Drawing.Point(130, 60);
+            this.mtxtB_alter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mtxtB_alter.Mask = "000";
             this.mtxtB_alter.Name = "mtxtB_alter";
-            this.mtxtB_alter.Size = new System.Drawing.Size(56, 38);
+            this.mtxtB_alter.Size = new System.Drawing.Size(33, 26);
             this.mtxtB_alter.TabIndex = 8;
             this.mtxtB_alter.Visible = false;
             this.mtxtB_alter.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtB_alter_MaskInputRejected);
@@ -115,10 +121,11 @@
             // 
             // mtxtB_gewicht
             // 
-            this.mtxtB_gewicht.Location = new System.Drawing.Point(231, 209);
+            this.mtxtB_gewicht.Location = new System.Drawing.Point(130, 135);
+            this.mtxtB_gewicht.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mtxtB_gewicht.Mask = "000";
             this.mtxtB_gewicht.Name = "mtxtB_gewicht";
-            this.mtxtB_gewicht.Size = new System.Drawing.Size(56, 38);
+            this.mtxtB_gewicht.Size = new System.Drawing.Size(33, 26);
             this.mtxtB_gewicht.TabIndex = 10;
             this.mtxtB_gewicht.Visible = false;
             this.mtxtB_gewicht.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mtxtB_gewicht_MouseClick);
@@ -126,10 +133,11 @@
             // 
             // mtxtB_gross
             // 
-            this.mtxtB_gross.Location = new System.Drawing.Point(231, 153);
+            this.mtxtB_gross.Location = new System.Drawing.Point(130, 99);
+            this.mtxtB_gross.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mtxtB_gross.Mask = "000";
             this.mtxtB_gross.Name = "mtxtB_gross";
-            this.mtxtB_gross.Size = new System.Drawing.Size(56, 38);
+            this.mtxtB_gross.Size = new System.Drawing.Size(33, 26);
             this.mtxtB_gross.TabIndex = 9;
             this.mtxtB_gross.Visible = false;
             this.mtxtB_gross.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtB_gross_MaskInputRejected);
@@ -140,9 +148,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(38, 446);
+            this.pictureBox1.Location = new System.Drawing.Point(21, 288);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(675, 404);
+            this.pictureBox1.Size = new System.Drawing.Size(380, 261);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
@@ -154,9 +163,10 @@
             this.btn_bmi.Font = new System.Drawing.Font("Elephant", 10.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_bmi.ForeColor = System.Drawing.Color.NavajoWhite;
             this.btn_bmi.Image = ((System.Drawing.Image)(resources.GetObject("btn_bmi.Image")));
-            this.btn_bmi.Location = new System.Drawing.Point(310, 92);
+            this.btn_bmi.Location = new System.Drawing.Point(174, 59);
+            this.btn_bmi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_bmi.Name = "btn_bmi";
-            this.btn_bmi.Size = new System.Drawing.Size(82, 155);
+            this.btn_bmi.Size = new System.Drawing.Size(46, 100);
             this.btn_bmi.TabIndex = 12;
             this.btn_bmi.Text = "BMI";
             this.btn_bmi.UseVisualStyleBackColor = false;
@@ -165,27 +175,30 @@
             // lbl_test
             // 
             this.lbl_test.AutoSize = true;
-            this.lbl_test.Location = new System.Drawing.Point(420, 96);
+            this.lbl_test.Location = new System.Drawing.Point(236, 62);
+            this.lbl_test.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_test.Name = "lbl_test";
-            this.lbl_test.Size = new System.Drawing.Size(74, 32);
+            this.lbl_test.Size = new System.Drawing.Size(42, 20);
             this.lbl_test.TabIndex = 13;
             this.lbl_test.Text = "Alter";
             // 
             // lbl_test2
             // 
             this.lbl_test2.AutoSize = true;
-            this.lbl_test2.Location = new System.Drawing.Point(420, 156);
+            this.lbl_test2.Location = new System.Drawing.Point(236, 101);
+            this.lbl_test2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_test2.Name = "lbl_test2";
-            this.lbl_test2.Size = new System.Drawing.Size(95, 32);
+            this.lbl_test2.Size = new System.Drawing.Size(55, 20);
             this.lbl_test2.TabIndex = 14;
             this.lbl_test2.Text = "Größe";
             // 
             // lbl_test3
             // 
             this.lbl_test3.AutoSize = true;
-            this.lbl_test3.Location = new System.Drawing.Point(420, 212);
+            this.lbl_test3.Location = new System.Drawing.Point(236, 137);
+            this.lbl_test3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_test3.Name = "lbl_test3";
-            this.lbl_test3.Size = new System.Drawing.Size(118, 32);
+            this.lbl_test3.Size = new System.Drawing.Size(67, 20);
             this.lbl_test3.TabIndex = 15;
             this.lbl_test3.Text = "Gewicht";
             // 
@@ -193,9 +206,10 @@
             // 
             this.btn_close.BackColor = System.Drawing.Color.Red;
             this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_close.Location = new System.Drawing.Point(645, 37);
+            this.btn_close.Location = new System.Drawing.Point(363, 24);
+            this.btn_close.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(76, 42);
+            this.btn_close.Size = new System.Drawing.Size(43, 27);
             this.btn_close.TabIndex = 16;
             this.btn_close.Text = "Schließen";
             this.btn_close.UseVisualStyleBackColor = false;
@@ -205,9 +219,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(644, 63);
+            this.label4.Location = new System.Drawing.Point(362, 41);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 32);
+            this.label4.Size = new System.Drawing.Size(46, 20);
             this.label4.TabIndex = 17;
             this.label4.Text = "close";
             // 
@@ -215,20 +230,21 @@
             // 
             this.lbl_summe.AutoSize = true;
             this.lbl_summe.ForeColor = System.Drawing.Color.Red;
-            this.lbl_summe.Location = new System.Drawing.Point(304, 263);
+            this.lbl_summe.Location = new System.Drawing.Point(171, 170);
+            this.lbl_summe.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_summe.Name = "lbl_summe";
-            this.lbl_summe.Size = new System.Drawing.Size(112, 32);
+            this.lbl_summe.Size = new System.Drawing.Size(64, 20);
             this.lbl_summe.TabIndex = 18;
             this.lbl_summe.Text = "Summe";
             this.lbl_summe.Click += new System.EventHandler(this.lbl_summe_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(753, 862);
+            this.ClientSize = new System.Drawing.Size(424, 556);
             this.Controls.Add(this.lbl_summe);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_close);
@@ -245,6 +261,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rB_frau);
             this.Controls.Add(this.rB_mann);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Berechne Deinen BMI";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

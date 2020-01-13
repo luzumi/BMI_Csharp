@@ -2,13 +2,19 @@
 using System.Windows.Forms;
 
 
+
 namespace BMI_Csharp
 {
     public partial class Form1 : Form
     {
         double alter = 0.5, gross = 0.5, gewicht = 0.5;
         double summe;
-                
+        bool mann, frau;
+
+        //Variable für Form Tabellen.cs
+        public decimal tabellenauswahl { get; private set; }
+       
+        
 
         public Form1()
         {
@@ -25,14 +31,17 @@ namespace BMI_Csharp
             mtxtB_alter.Visible = true; mtxtB_gross.Visible = true; 
             mtxtB_gewicht.Visible = true;
             mtxtB_alter.Focus();
-
-        }
+            mann = true;
+            frau = false;
+    }
 
         private void rB_frau_CheckedChanged(object sender, EventArgs e)
         {
             mtxtB_alter.Visible = true;mtxtB_gross.Visible = true;
             mtxtB_gewicht.Visible = true;
             mtxtB_alter.Focus();
+            mann = false;
+            frau = true;
         }
 
         private void mtxtB_alter_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -103,21 +112,23 @@ namespace BMI_Csharp
 
         private void btn_bmi_Click(object sender, EventArgs e)
         {
-            summe = gewicht / ((gross / 100) * (gross / 100));
+            summe = gewicht / (gross / 100 * (gross / 100));
             summe = Math.Round(summe, 2);
             //Zurodnung des BMI(summe)
-            if (rB_mann.Visible == true)
+            if (mann == true)
             {
-                if (alter <= 18)
-                { 
-                    //Ausgabe BMI_Junge.jpg in neue Form 
-                }           //Abfrage für Tabellenausgabe - Ausgabe Tabelle Kind
-                else if (alter > 18)
+                if (alter <= 18 && mann == true)
                 {
-                    //Ausgabe BMI_Mann.jpg in neue Form
-                }       //Abfrage für Tabellenausgabe - Ausgabe Tabelle Mann
+                    FormJunge junge = new FormJunge();
+                    junge.Show();
+                }           //Abfrage für Tabellenausgabe - Ausgabe Tabelle Kind
+                else if (alter > 18 && mann == true)          //Abfrage für Tabellenausgabe - Ausgabe Tabelle Mann
+                {
+                    FormMann mann = new FormMann();
+                    mann.Show();
+                }       
 
-                if (alter < 8)
+                if (alter < 8 && mann == true)
                     {
                         if (summe < 14.2)
                         {
@@ -140,7 +151,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                 }             //Kind Junge
-                else if (alter == 9)
+                else if (alter == 9 && mann == true)
                     {
                         if (summe < 13.7)
                         {
@@ -163,7 +174,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }       //Kind Junge
-                else if (alter == 10)
+                else if (alter == 10 && mann == true)
                     {
                         if (summe < 14.6)
                         {
@@ -186,7 +197,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind Junge
-                else if (alter == 11)
+                else if (alter == 11 && mann == true)
                     {
                         if (summe < 14.3)
                         {
@@ -209,7 +220,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind Junge
-                else if (alter == 12)
+                else if (alter == 12 && mann == true)
                     {
                         if (summe < 14.8)
                         {
@@ -232,7 +243,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind Junge
-                else if (alter == 13)
+                else if (alter == 13 && mann == true)
                     {
                         if (summe < 14.3)
                         {
@@ -255,7 +266,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind Junge
-                else if (alter == 14)
+                else if (alter == 14 && mann == true)
                     {
                         if (summe < 16.7)
                         {
@@ -278,7 +289,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind Junge
-                else if (alter == 15)
+                else if (alter == 15 && mann == true)
                     {
                         if (summe < 17.8)
                         {
@@ -301,7 +312,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind Junge
-                else if (alter == 16)
+                else if (alter == 16 && mann == true)
                     {
                         if (summe < 18.5)
                         {
@@ -324,7 +335,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind Junge
-                else if (alter == 17)
+                else if (alter == 17 && mann == true)
                     {
                         if (summe < 18.6)
                         {
@@ -347,7 +358,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind Junge
-                else if (alter == 18)
+                else if (alter == 18 && mann == true)
                     {
                         if (summe < 18.6)
                         {
@@ -370,7 +381,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind Junge
-                else if (alter > 18 && alter < 25)
+                else if (alter > 18 && alter < 25 && mann == true)
                 { //Ausgabe BMI_Mann.jpg in neue Form }
                     if (summe < 19)
                     {
@@ -389,7 +400,7 @@ namespace BMI_Csharp
                         lbl_summe.Text = "starkes Übergewicht";
                     }
                 }
-                else if (alter >= 25 && alter < 35)
+                else if (alter >= 25 && alter < 35 && mann == true)
                 { //Ausgabe BMI_Mann.jpg in neue Form }
                     if (summe < 19)
                     {
@@ -408,7 +419,7 @@ namespace BMI_Csharp
                         lbl_summe.Text = "starkes Übergewicht";
                     }
                 }
-                else if (alter >= 35 && alter < 44)
+                else if (alter >= 35 && alter < 44 && mann == true)
                 { //Ausgabe BMI_Mann.jpg in neue Form }
                     if (summe < 20)
                     {
@@ -427,7 +438,7 @@ namespace BMI_Csharp
                         lbl_summe.Text = "starkes Übergewicht";
                     }
                 }
-                else if (alter >= 44 && alter < 55)
+                else if (alter >= 44 && alter < 55 && mann == true)
                 { //Ausgabe BMI_Mann.jpg in neue Form }
                     if (summe < 21)
                     {
@@ -446,7 +457,7 @@ namespace BMI_Csharp
                         lbl_summe.Text = "starkes Übergewicht";
                     }
                 }
-                else if (alter >= 55 && alter < 65)
+                else if (alter >= 55 && alter < 65 && mann == true)
                 { //Ausgabe BMI_Mann.jpg in neue Form }
                     if (summe < 22)
                     {
@@ -465,7 +476,7 @@ namespace BMI_Csharp
                         lbl_summe.Text = "starkes Übergewicht";
                     }
                 }
-                else if (alter >= 65)
+                else if (alter >= 65 && mann == true)
                 { //Ausgabe BMI_Mann.jpg in neue Form }
                     if (summe < 23)
                     {
@@ -484,18 +495,21 @@ namespace BMI_Csharp
                         lbl_summe.Text = "starkes Übergewicht";
                     }
                 }
+                
             }
-            if (rB_frau.Visible == true)
+            if (frau == true)
             {
-                if (alter <= 18)
-                { 
-                    //Ausgabe BMI_madel.jpg in neue Form 
-                }           //Abfrage für Tabellenausgabe - Ausgabe Tabelle Kind
-                else if (alter > 18)
+                if (alter <= 18 && frau == true)
                 {
-                    //Ausgabe BMI_Frau.jpg in neue Form
+                    FormMadel madel = new FormMadel();
+                    madel.Show();
+                }           //Abfrage für Tabellenausgabe - Ausgabe Tabelle Kind
+                else if (alter > 18 && frau == true)
+                {
+                    FormFrau frau = new FormFrau();
+                    frau.Show();
                 }       //Abfrage für Tabellenausgabe - Ausgabe Tabelle Mann
-                if (alter < 8)
+                if (alter < 8 && frau == true)
                     {
                         if (summe < 13.2)
                         {
@@ -518,7 +532,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                 }             //Kind madel
-                else if (alter == 9)
+                else if (alter == 9 && frau == true)
                     {
                         if (summe < 13.7)
                         {
@@ -541,7 +555,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }       //Kind madel
-                else if (alter == 10)
+                else if (alter == 10 && frau == true)
                     {
                         if (summe < 14.2)
                         {
@@ -564,7 +578,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind madel
-                else if (alter == 11)
+                else if (alter == 11 && frau == true)
                     {
                         if (summe < 24.6)
                         {
@@ -587,7 +601,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind madel
-                else if (alter == 12)
+                else if (alter == 12 && frau == true)
                     {
                         if (summe < 16)
                         {
@@ -610,7 +624,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind madel
-                else if (alter == 13)
+                else if (alter == 13 && frau == true)
                     {
                         if (summe < 15.6)
                         {
@@ -633,7 +647,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind madel
-                else if (alter == 14)
+                else if (alter == 14 && frau == true)
                     {
                         if (summe < 17)
                         {
@@ -656,7 +670,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind madel
-                else if (alter == 15)
+                else if (alter == 15 && frau == true)
                     {
                         if (summe < 17.6)
                         {
@@ -679,7 +693,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind madel
-                else if (alter == 16)
+                else if (alter == 16 && frau == true)
                     {
                         if (summe < 17.8)
                         {
@@ -702,7 +716,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind madel
-                else if (alter == 17)
+                else if (alter == 17 && frau == true)
                     {
                         if (summe < 17.8)
                         {
@@ -725,7 +739,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind madel
-                else if (alter == 18)
+                else if (alter == 18 && frau == true)
                     {
                         if (summe < 18.3)
                         {
@@ -748,7 +762,7 @@ namespace BMI_Csharp
                             lbl_summe.Text = "starkes Übergewicht";
                         }
                     }      //Kind madel
-                else if (alter > 18 && alter < 25)
+                else if (alter > 18 && alter < 25 && frau == true)
                 { 
                     if (summe < 20)
                     {
@@ -767,7 +781,7 @@ namespace BMI_Csharp
                         lbl_summe.Text = "starkes Übergewicht";
                     }
                 }
-                else if (alter >= 25 && alter < 35)
+                else if (alter >= 25 && alter < 35 && frau == true)
                 { 
                     if (summe < 21)
                     {
@@ -786,7 +800,7 @@ namespace BMI_Csharp
                         lbl_summe.Text = "starkes Übergewicht";
                     }
                 }
-                else if (alter >= 35 && alter < 44)
+                else if (alter >= 35 && alter < 44 && frau == true)
                 { 
                     if (summe < 22)
                     {
@@ -805,7 +819,7 @@ namespace BMI_Csharp
                         lbl_summe.Text = "starkes Übergewicht";
                     }
                 }
-                else if (alter >= 44 && alter < 55)
+                else if (alter >= 44 && alter < 55 && frau == true)
                 { 
                     if (summe < 23)
                     {
@@ -824,7 +838,7 @@ namespace BMI_Csharp
                         lbl_summe.Text = "starkes Übergewicht";
                     }
                 }
-                if (alter >= 55 && alter < 65)
+                if (alter >= 55 && alter < 65 && frau == true)
                 {
                     if (summe < 24)
                     {
@@ -843,7 +857,7 @@ namespace BMI_Csharp
                         lbl_summe.Text = "starkes Übergewicht";
                     }
                 }
-                if (alter >= 65)
+                if (alter >= 65 && frau == true)
                 {
                     if (summe < 25)
                     {
@@ -868,7 +882,7 @@ namespace BMI_Csharp
 
         private void btn_close_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
 
     }
