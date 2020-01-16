@@ -39,9 +39,6 @@
             this.mtxtB_gross = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_bmi = new System.Windows.Forms.Button();
-            this.lbl_test = new System.Windows.Forms.Label();
-            this.lbl_test2 = new System.Windows.Forms.Label();
-            this.lbl_test3 = new System.Windows.Forms.Label();
             this.btn_close = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -96,7 +93,6 @@
             this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Größe:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -117,9 +113,7 @@
             this.mtxtB_alter.Size = new System.Drawing.Size(33, 26);
             this.mtxtB_alter.TabIndex = 8;
             this.mtxtB_alter.Visible = false;
-            this.mtxtB_alter.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtB_alter_MaskInputRejected);
             this.mtxtB_alter.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mtxtB_alter_MouseClick);
-            this.mtxtB_alter.TextChanged += new System.EventHandler(this.mtxtB_alter_TextChanged);
             this.mtxtB_alter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mtxtB_alter_KeyDown);
             // 
             // mtxtB_gewicht
@@ -132,7 +126,6 @@
             this.mtxtB_gewicht.TabIndex = 10;
             this.mtxtB_gewicht.Visible = false;
             this.mtxtB_gewicht.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mtxtB_gewicht_MouseClick);
-            this.mtxtB_gewicht.TextChanged += new System.EventHandler(this.mtxtB_gewicht_TextChanged);
             // 
             // mtxtB_gross
             // 
@@ -143,7 +136,6 @@
             this.mtxtB_gross.Size = new System.Drawing.Size(33, 26);
             this.mtxtB_gross.TabIndex = 9;
             this.mtxtB_gross.Visible = false;
-            this.mtxtB_gross.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtB_gross_MaskInputRejected);
             this.mtxtB_gross.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mtxtB_gross_MouseClick);
             this.mtxtB_gross.TextChanged += new System.EventHandler(this.mtxtB_gross_TextChanged);
             this.mtxtB_gross.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mtxtB_gross_KeyDown);
@@ -174,36 +166,6 @@
             this.btn_bmi.Text = "BMI";
             this.btn_bmi.UseVisualStyleBackColor = false;
             this.btn_bmi.Click += new System.EventHandler(this.btn_bmi_Click);
-            // 
-            // lbl_test
-            // 
-            this.lbl_test.AutoSize = true;
-            this.lbl_test.Location = new System.Drawing.Point(236, 62);
-            this.lbl_test.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_test.Name = "lbl_test";
-            this.lbl_test.Size = new System.Drawing.Size(42, 20);
-            this.lbl_test.TabIndex = 13;
-            this.lbl_test.Text = "Alter";
-            // 
-            // lbl_test2
-            // 
-            this.lbl_test2.AutoSize = true;
-            this.lbl_test2.Location = new System.Drawing.Point(236, 101);
-            this.lbl_test2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_test2.Name = "lbl_test2";
-            this.lbl_test2.Size = new System.Drawing.Size(55, 20);
-            this.lbl_test2.TabIndex = 14;
-            this.lbl_test2.Text = "Größe";
-            // 
-            // lbl_test3
-            // 
-            this.lbl_test3.AutoSize = true;
-            this.lbl_test3.Location = new System.Drawing.Point(236, 137);
-            this.lbl_test3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_test3.Name = "lbl_test3";
-            this.lbl_test3.Size = new System.Drawing.Size(67, 20);
-            this.lbl_test3.TabIndex = 15;
-            this.lbl_test3.Text = "Gewicht";
             // 
             // btn_close
             // 
@@ -261,7 +223,7 @@
             this.label7.Location = new System.Drawing.Point(18, 210);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(240, 30);
+            this.label7.Size = new System.Drawing.Size(160, 20);
             this.label7.TabIndex = 21;
             this.label7.Text = "Ihr Eingruppierung ist";
             // 
@@ -290,9 +252,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_close);
-            this.Controls.Add(this.lbl_test3);
-            this.Controls.Add(this.lbl_test2);
-            this.Controls.Add(this.lbl_test);
             this.Controls.Add(this.btn_bmi);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.mtxtB_gross);
@@ -322,11 +281,8 @@
         private System.Windows.Forms.MaskedTextBox mtxtB_alter;
         private System.Windows.Forms.MaskedTextBox mtxtB_gewicht;
         private System.Windows.Forms.MaskedTextBox mtxtB_gross;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_bmi;
-        private System.Windows.Forms.Label lbl_test;
-        private System.Windows.Forms.Label lbl_test2;
-        private System.Windows.Forms.Label lbl_test3;
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;

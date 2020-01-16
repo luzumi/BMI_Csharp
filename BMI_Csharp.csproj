@@ -115,5 +115,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="BMI Frau.JPG" />
+    <Content Include="BMI Junge.JPG" />
+    <Content Include="BMI Madel.JPG" />
+    <Content Include="BMI Mann.JPG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

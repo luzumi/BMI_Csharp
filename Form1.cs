@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -10,20 +11,22 @@ namespace BMI_Csharp
         double alter = 0.5, gross = 0.5, gewicht = 0.5;
         double summe;
         bool mann, frau;
+        FormJunge tabelle = new FormJunge();
 
         //Variable für Form Tabellen.cs
-        public decimal tabellenauswahl { get; private set; }
-       
-        
+        class Tabelle {
+            public int tabellenauswahl;
+            
+            private int Tabellenauswahl
+            {
+                get { return tabellenauswahl; } 
+                set { tabellenauswahl = value; }
+        }
+    }
 
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void rB_mann_CheckedChanged(object sender, EventArgs e)
@@ -42,12 +45,6 @@ namespace BMI_Csharp
             mtxtB_alter.Focus();
             mann = false;
             frau = true;
-        }
-
-        private void mtxtB_alter_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-            
-            
         }
 
         private void mtxtB_alter_MouseClick(object sender, MouseEventArgs e)
@@ -73,30 +70,22 @@ namespace BMI_Csharp
                 mtxtB_gross.Focus();
             }
         }
-
-        private void mtxtB_gross_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
+ 
         private void mtxtB_gross_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 mtxtB_gewicht.Focus();
             }
-        }
+            if( e.KeyCode == Keys.Back)
+            {
 
-        private void mtxtB_alter_TextChanged(object sender, EventArgs e)
-        {
-            lbl_test.Text = mtxtB_alter.Text;
-            alter = double.Parse(mtxtB_alter.Text);
+            }
         }
 
         private void mtxtB_gross_TextChanged(object sender, EventArgs e)
         {
-            lbl_test2.Text = mtxtB_gross.Text;
-            gross = double.Parse(mtxtB_gross.Text);
+            //gross = double.Parse(mtxtB_gross.Text);
         }
 
         private void lbl_summe_Click(object sender, EventArgs e)
@@ -114,33 +103,36 @@ namespace BMI_Csharp
 
         }
 
-        private void mtxtB_gewicht_TextChanged(object sender, EventArgs e)
-        {
-            lbl_test3.Text = mtxtB_gewicht.Text;
-            gewicht = double.Parse(mtxtB_gewicht.Text);
-        }
-
         private void btn_bmi_Click(object sender, EventArgs e)
         {
-            summe = gewicht / (gross / 100 * (gross / 100));
-            summe = Math.Round(summe, 2);
-            label6.Text = summe.ToString();
-            label6.Visible = true;
-            lbl_gruppe.Visible = true;
+            if (mtxtB_alter.Text != null || mtxtB_gewicht.Text != null || mtxtB_gross.Text != null) 
+            { 
+                alter = double.Parse(mtxtB_alter.Text);
+                gewicht = double.Parse(mtxtB_gewicht.Text);
+                gross = Convert.ToDouble(mtxtB_gross.Text);
+                summe = gewicht / (gross / 100 * (gross / 100));
+                summe = Math.Round(summe, 2);
+                label6.Text = summe.ToString();
+                label6.Visible = true;
+                lbl_gruppe.Visible = true;
 
-            if (mann == true)
+                if (mann == true)
             {
                 if (alter <= 18 && mann == true)
                 {
-                    FormJunge junge = new FormJunge();
-                    junge.Show();
-                }           //Abfrage für Tabellenausgabe - Ausgabe Tabelle Kind
+                    tabelle.Text = "BMI für Jungs";
+                    tabelle.Show();
+                    tabelle.pictureBox1.Image = new Bitmap("C:/Users/corat/Source/Repos/BMI_Csharp/BMI Junge.JPG");
+                }
+                       //Abfrage für Tabellenausgabe - Ausgabe Tabelle Kind
                 else if (alter > 18 && mann == true)          //Abfrage für Tabellenausgabe - Ausgabe Tabelle Mann
                 {
-                    FormMann mann = new FormMann();
-                    mann.Show();
+                    tabelle.Text = "BMI für Männer";
+                    tabelle.Show();
+                    tabelle.pictureBox1.Image = new Bitmap("C:/Users/corat/Source/Repos/BMI_Csharp/BMI Mann.JPG");
                 }       
-
+            }
+                {
                 if (alter < 8 && mann == true)
                     {
                         if (summe < 14.2)
@@ -163,7 +155,7 @@ namespace BMI_Csharp
                         {
                             lbl_gruppe.Text = "starkes Übergewicht";
                         }
-                }             //Kind Junge
+                    }             //Kind Junge
                 else if (alter == 9 && mann == true)
                     {
                         if (summe < 13.7)
@@ -395,133 +387,135 @@ namespace BMI_Csharp
                         }
                     }      //Kind Junge
                 else if (alter > 18 && alter < 25 && mann == true)
-                { 
-                    if (summe < 19)
                     {
-                        lbl_gruppe.Text = "Untergewicht";
+                        if (summe < 19)
+                        {
+                            lbl_gruppe.Text = "Untergewicht";
+                        }
+                        else if (summe >= 19 && summe <= 24)
+                        {
+                            lbl_gruppe.Text = "Normalgewicht";
+                        }
+                        else if (summe > 24 && summe <= 28)
+                        {
+                            lbl_gruppe.Text = "leichtes Übergewicht";
+                        }
+                        else if (summe > 28)
+                        {
+                            lbl_gruppe.Text = "Übergewicht";
+                        }
                     }
-                    else if (summe >= 19 && summe <= 24)
-                    {
-                        lbl_gruppe.Text = "Normalgewicht";
-                    }
-                    else if (summe > 24 && summe <= 28)
-                    {
-                        lbl_gruppe.Text = "leichtes Übergewicht";
-                    }
-                    else if (summe > 28)
-                    {
-                        lbl_gruppe.Text = "Übergewicht";
-                    }
-                }
                 else if (alter >= 25 && alter < 35 && mann == true)
-                { 
-                    if (summe < 19)
                     {
-                        lbl_gruppe.Text = "Untergewicht";
+                        if (summe < 19)
+                        {
+                            lbl_gruppe.Text = "Untergewicht";
+                        }
+                        else if (summe >= 19 && summe <= 25)
+                        {
+                            lbl_gruppe.Text = "Normalgewicht";
+                        }
+                        else if (summe > 25 && summe <= 29)
+                        {
+                            lbl_gruppe.Text = "leichtes Übergewicht";
+                        }
+                        else if (summe > 29)
+                        {
+                            lbl_gruppe.Text = "Übergewicht";
+                        }
                     }
-                    else if (summe >= 19 && summe <= 25)
-                    {
-                        lbl_gruppe.Text = "Normalgewicht";
-                    }
-                    else if (summe > 25 && summe <= 29)
-                    {
-                        lbl_gruppe.Text = "leichtes Übergewicht";
-                    }
-                    else if (summe > 29)
-                    {
-                        lbl_gruppe.Text = "Übergewicht";
-                    }
-                }
                 else if (alter >= 35 && alter < 44 && mann == true)
-                { 
-                    if (summe < 20)
                     {
-                        lbl_gruppe.Text = "Untergewicht";
+                        if (summe < 20)
+                        {
+                            lbl_gruppe.Text = "Untergewicht";
+                        }
+                        else if (summe >= 20 && summe <= 26)
+                        {
+                            lbl_gruppe.Text = "Normalgewicht";
+                        }
+                        else if (summe > 26 && summe <= 30)
+                        {
+                            lbl_gruppe.Text = "leichtes Übergewicht";
+                        }
+                        else if (summe > 30)
+                        {
+                            lbl_gruppe.Text = "Übergewicht";
+                        }
                     }
-                    else if (summe >= 20 && summe <= 26)
-                    {
-                        lbl_gruppe.Text = "Normalgewicht";
-                    }
-                    else if (summe > 26 && summe <= 30)
-                    {
-                        lbl_gruppe.Text = "leichtes Übergewicht";
-                    }
-                    else if (summe > 30)
-                    {
-                        lbl_gruppe.Text = "Übergewicht";
-                    }
-                }
                 else if (alter >= 44 && alter < 55 && mann == true)
-                {
-                    if (summe < 21)
                     {
-                        lbl_gruppe.Text = "Untergewicht";
+                        if (summe < 21)
+                        {
+                            lbl_gruppe.Text = "Untergewicht";
+                        }
+                        else if (summe >= 21 && summe <= 27)
+                        {
+                            lbl_gruppe.Text = "Normalgewicht";
+                        }
+                        else if (summe > 27 && summe <= 31)
+                        {
+                            lbl_gruppe.Text = "leichtes Übergewicht";
+                        }
+                        else if (summe > 31)
+                        {
+                            lbl_gruppe.Text = "Übergewicht";
+                        }
                     }
-                    else if (summe >= 21 && summe <= 27)
-                    {
-                        lbl_gruppe.Text = "Normalgewicht";
-                    }
-                    else if (summe > 27 && summe <= 31)
-                    {
-                        lbl_gruppe.Text = "leichtes Übergewicht";
-                    }
-                    else if (summe > 31)
-                    {
-                        lbl_gruppe.Text = "Übergewicht";
-                    }
-                }
                 else if (alter >= 55 && alter < 65 && mann == true)
-                {
-                    if (summe < 22)
                     {
-                        lbl_gruppe.Text = "Untergewicht";
+                        if (summe < 22)
+                        {
+                            lbl_gruppe.Text = "Untergewicht";
+                        }
+                        else if (summe >= 22 && summe <= 28)
+                        {
+                            lbl_gruppe.Text = "Normalgewicht";
+                        }
+                        else if (summe > 28 && summe <= 32)
+                        {
+                            lbl_gruppe.Text = "leichtes Übergewicht";
+                        }
+                        else if (summe > 32)
+                        {
+                            lbl_gruppe.Text = "Übergewicht";
+                        }
                     }
-                    else if (summe >= 22 && summe <= 28)
-                    {
-                        lbl_gruppe.Text = "Normalgewicht";
-                    }
-                    else if (summe > 28 && summe <= 32)
-                    {
-                        lbl_gruppe.Text = "leichtes Übergewicht";
-                    }
-                    else if (summe > 32)
-                    {
-                        lbl_gruppe.Text = "Übergewicht";
-                    }
-                }
                 else if (alter >= 65 && mann == true)
-                { 
-                    if (summe < 23)
                     {
-                        lbl_gruppe.Text = "Untergewicht";
+                        if (summe < 23)
+                        {
+                            lbl_gruppe.Text = "Untergewicht";
+                        }
+                        else if (summe >= 23 && summe <= 29)
+                        {
+                            lbl_gruppe.Text = "Normalgewicht";
+                        }
+                        else if (summe > 29 && summe <= 32)
+                        {
+                            lbl_gruppe.Text = "leichtes Übergewicht";
+                        }
+                        else if (summe > 32)
+                        {
+                            lbl_gruppe.Text = "Übergewicht";
+                        }
                     }
-                    else if (summe >= 23 && summe <= 29)
-                    {
-                        lbl_gruppe.Text = "Normalgewicht";
-                    }
-                    else if (summe > 29 && summe <= 32)
-                    {
-                        lbl_gruppe.Text = "leichtes Übergewicht";
-                    }
-                    else if (summe > 32)
-                    {
-                        lbl_gruppe.Text = "Übergewicht";
-                    }
-                }
-                
             }
-            if (frau == true)
+                if (frau == true)
             {
                 if (alter <= 18 && frau == true)
                 {
-                    FormMadel madel = new FormMadel();
-                    madel.Show();
+                    tabelle.Text = "BMI für Mädchen";
+                    tabelle.Show();
+                    tabelle.pictureBox1.Image = new Bitmap("C:/Users/corat/Source/Repos/BMI_Csharp/BMI Madel.JPG");
                 }           //Abfrage für Tabellenausgabe - Ausgabe Tabelle Kind
                 else if (alter > 18 && frau == true)
                 {
-                    FormFrau frau = new FormFrau();
-                    frau.Show();
+                    tabelle.Text = "BMI für Frauen";
+                    tabelle.Show();
+                    tabelle.pictureBox1.Image = new Bitmap("C:/Users/corat/Source/Repos/BMI_Csharp/BMI Frau.JPG");
                 }       //Abfrage für Tabellenausgabe - Ausgabe Tabelle Mann
+                
                 if (alter < 8 && frau == true)
                     {
                         if (summe < 13.2)
@@ -890,7 +884,7 @@ namespace BMI_Csharp
                     }
                 }
             }
-
+            }
         }
 
         private void btn_close_Click(object sender, EventArgs e)
